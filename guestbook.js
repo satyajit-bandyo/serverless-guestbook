@@ -2,12 +2,13 @@
  * Web application
  */
 const apiUrl = 'https://us-south.functions.appdomain.cloud/api/v1/web/833bb111-5b5c-449a-b3ad-a662c342ea81/guestbook';
+alert("apiUrl=" +apiUrl);
 const guestbook = {
   // retrieve the existing guestbook entries
   get() {
     return $.ajax({
       type: 'GET',
-      url: `${apiUrl}/read -guestbook-entries-sequence.json`,
+      url: `${apiUrl}/read-guestbook-entries-sequence.json`,
       dataType: 'json'
     });
   },
@@ -16,7 +17,7 @@ const guestbook = {
     console.log('Sending', name, email, comment)
     return $.ajax({
       type: 'PUT',
-      url: `${apiUrl}/save -guestbook-entry-sequence.json`,
+      url: `${apiUrl}/save-guestbook-entry-sequence.json`,
       contentType: 'application/json; charset=utf-8',
       data: JSON.stringify({
         name,
